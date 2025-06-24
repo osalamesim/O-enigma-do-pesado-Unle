@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Enigma - Fase 4</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+
+    .frase1 {
+      font-size: 40px;
+    }
+
+    img {
+      margin-top: 100px;
+      border: 3px solid white;
+      width: 400px;
+      height: 400px;
+    }
+
+    input[type="text"] {
+      width: 500px;
+      height: 50px;
+      font-size: 30px;
+    }
+
+    input::placeholder {
+      font-size: 30px;
+    }
+    
+    button {
+      margin-top: 30px;
+      width: 150px;
+      height: 50px;
+      font-size: 30px;
+    }
+
+    .aviso{
+      color: red;
+      font-size: 50px;
+    }
+    
+    #codigo {
+      display: none;
+      font-size: 50px
+    }
+   #avisoSenha {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fase MIAU</h1>
+  <div class="frase1">Saiu da A e foi pros EUA.</div>
+  <img src="https://i.ibb.co/CpfHFf7G/barcode.png"> <br>
+  <input id="senha" type="text" placeholder="Digite aqui"> <br>
+  <button onclick="functionSend()"> Enviar </button>
+  <div id="codigo">Senha para o próximo enigma: <strong>jogadordefutebol</strong> <br> <a href="https://youtube.com">Próximo Enigma</a> </div>
+   
+  <div id="avisoSenha">
+  <h1 class="aviso"> ANTES DISSO, DIGITE A SENHA </h1> <br>
+  <input id="senhaB" type="text" placeholder="Digite aqui"> <br>
+  <button onclick="codeVerify()"> Enviar </button> </div>
+  <script type="text/javascript">
+    let verified = false; 
+    function functionSend() {
+     if (verified === true) {
+      var senhaEscrita = document.getElementById("senha").value.toLowerCase();
+      var senhaCorreta = "messi";
+
+      if (senhaEscrita === senhaCorreta) {
+        document.getElementById("codigo").style.display = "block";
+      } else {
+        alert("ERRO");
+      }
+    }
+  }
+ 
+   function codeVerify(){
+      var senhaBEscrita = document.getElementById("senhaB").value.toLowerCase();
+      var senhaBEscritaCorreta = "ocolossogigante";
+      
+      if (senhaBEscrita === senhaBEscritaCorreta){
+      document.getElementById("avisoSenha").style.display = "none";
+      verified = true;
+    } else {
+       alert("VOCÊ NÃO SABE A SENHA")
+    }
+    }
+  </script>
+</body>
+  </html>
+                                                                                         
